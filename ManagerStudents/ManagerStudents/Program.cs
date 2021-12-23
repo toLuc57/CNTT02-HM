@@ -29,8 +29,13 @@ namespace ManagerStudents
             Console.WriteLine("--Members in classroom--");
             foreach(Student student in classroom1)
             {
+                // log  ket qua ra
+                // Vd dung  function  Console.WriteLine($"{student.getPosition()}") de log
                 student.getPosition();
             }
+           
+
+            Console.ReadLine();
         }
     }
 }

@@ -12,10 +12,12 @@ namespace ManagerStudents.NewClassroom
         {
             setName(name);
         }
+        // Dặt tên kiểu PascalCase : GetPosition
         public override string getPosition()
         {
             return getName() + ": Student";
         }
+        // Dặt tên kiểu PascalCase : GetBound
         public override double getBound()
         {
             return 0;
