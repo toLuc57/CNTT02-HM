@@ -8,20 +8,11 @@ namespace ManagerStudents.NewClassroom
 {
     class VicoStudent : Student
     {
-        public VicoStudent(String name)
+        public VicoStudent(String name,double point)
         {
-            setName(name);
-        }
-
-        // Dặt tên kiểu PascalCase : GetPosition
-        public override string getPosition()
-        {
-            return getName() + ": Vico Student";
-        }
-        // Dặt tên kiểu PascalCase : GetBound
-        public override double getBound()
-        {
-            return 0.2;
+            SetName(name);
+            SetPoint(point);
+            SetBound(0.2);
         }
     }
 }

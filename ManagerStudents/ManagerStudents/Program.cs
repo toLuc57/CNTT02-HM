@@ -13,27 +13,45 @@ namespace ManagerStudents
         {
             Console.WriteLine("--Manager Students--");
             List<Student> classroom1 = new List<Student>();
-
-            Console.WriteLine("Class Monitor? ");
-            string name = Console.ReadLine();
-            classroom1.Add(new ClassMonitor(name));
-
-            Console.WriteLine("Vico Class? ");
-            name = Console.ReadLine();
-            classroom1.Add(new VicoStudent(name));
-            for (int i=0; i < 8; ++i)
+            Console.Write("Number of students: ");
+            int n = int.Parse(Console.ReadLine());
+            int i = 0;
+            if (n > 2)
             {
+                Console.WriteLine("Class Monitor? ");
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+                Console.Write("Point: ");
+                double point = Convert.ToDouble(Console.ReadLine());
+                classroom1.Add(new ClassMonitor(name, point));
+
+                Console.WriteLine("Vico Class? ");
+                Console.Write("Name: ");
                 name = Console.ReadLine();
-                classroom1.Add(new OtherStudent(name));
+                Console.Write("Point: ");
+                point = Convert.ToDouble(Console.ReadLine());
+                classroom1.Add(new VicoStudent(name, point));
+
+                i += 2;
             }
-            Console.WriteLine("--Members in classroom--");
-            foreach(Student student in classroom1)
+
+            while(i<n)
             {
-                // log  ket qua ra
-                // Vd dung  function  Console.WriteLine($"{student.getPosition()}") de log
-                student.getPosition();
+                Console.WriteLine("Student index " + ++i + ": ");
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+                Console.Write("Point: ");
+                double point = Convert.ToDouble(Console.ReadLine());
+                classroom1.Add(new OtherStudent(name,point));
+                
             }
-           
+            Console.WriteLine();
+            Console.WriteLine("--Members in classroom--");
+            Student.GetMenu();
+            foreach (Student student in classroom1)
+            {
+                student.GetInformation();
+            }
 
             Console.ReadLine();
         }

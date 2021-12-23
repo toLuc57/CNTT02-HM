@@ -8,17 +8,11 @@ namespace ManagerStudents.NewClassroom
 {
     class ClassMonitor : Student
     {
-        public ClassMonitor(string name)
+        public ClassMonitor(string name,double point)
         {
-            setName(name);
-        }
-        public override string getPosition()
-        {
-            return getName() + " :Class Monitor";
-        }
-        public override double getBound()
-        {
-            return 0;
+            SetName(name);
+            SetPoint(point);
+            SetBound(0.5);
         }
     }
 }
