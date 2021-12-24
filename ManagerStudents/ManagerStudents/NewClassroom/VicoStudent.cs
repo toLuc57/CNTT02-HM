@@ -8,11 +8,12 @@ namespace ManagerStudents.NewClassroom
 {
     class VicoStudent : Student
     {
-        public VicoStudent(String name,double point)
+        public VicoStudent(string name,double point)
         {
             SetName(name);
             SetPoint(point);
-            SetBound(0.2);
+            SetBound(0.2 + GetBound());
+            SetBonusHk(1 + GetBonusHk());
         }
     }
 }

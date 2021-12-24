@@ -11,6 +11,24 @@ namespace ManagerStudents.NewClassroom
         string name;
         double point;
         double bonus = 0;
+        int bonusHk = 0;
+        public Student()
+        {
+        }
+        public Student(string name, double bonus, int hk)
+        {
+            this.name = name;
+            point = -1;
+            this.bonus = bonus;
+            this.bonusHk = bonusHk;
+        }
+        public Student(string name,double point, double bonus, int bonusHk)
+        {
+            this.name = name;
+            this.point = point;
+            this.bonus = bonus;
+            this.bonusHk = bonusHk;
+        }
         // Dặt tên kiểu PascalCase : SetName 
         public void SetName(string name)
         {
@@ -39,11 +57,19 @@ namespace ManagerStudents.NewClassroom
         {
             return point;
         }
+        public void SetBonusHk(int bonusHk)
+        {
+            this.bonusHk = bonusHk;
+        }
+        public int GetBonusHk()
+        {
+            return bonusHk;
+        }
         // Dặt tên kiểu PascalCase : GetPosition
         public void GetInformation()
         {
             Console.WriteLine(GetName() + '\t' + GetPoint() 
-                + '\t' + GetBound() + '\t' + GetTotal());
+                + '\t' + GetBound() + '\t' + GetTotal() + '\t' + GetHk());
         }
 
         public void SetBound(double bonus)
@@ -60,7 +86,7 @@ namespace ManagerStudents.NewClassroom
         }
         public static void GetMenu()
         {
-            Console.WriteLine("Name\tPoint\tBound\tTotal");
+            Console.WriteLine("Name\tPoint\tBound\tTotal\tHK");
             Console.WriteLine("------------------------------");
         } 
     }

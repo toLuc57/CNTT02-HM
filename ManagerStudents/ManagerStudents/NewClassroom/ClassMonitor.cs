@@ -12,7 +12,8 @@ namespace ManagerStudents.NewClassroom
         {
             SetName(name);
             SetPoint(point);
-            SetBound(0.5);
+            SetBound(0.5 + GetBound());
+            SetBonusHk(2 + GetBonusHk());
         }
     }
 }
