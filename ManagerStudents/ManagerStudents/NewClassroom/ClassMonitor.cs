@@ -8,11 +8,15 @@ namespace ManagerStudents.NewClassroom
 {
     class ClassMonitor : Student
     {
-        public ClassMonitor(string name,double point)
+        public ClassMonitor(string name):base(name)
         {
-            SetName(name);
-            SetPoint(point);
-            SetBound(0.5);
+            this.name = name;
+            position = "Class Monitor";
+        }
+        public override double GetBonus()
+        {
+            bonus += 0.5;
+            return bonus;
         }
     }
 }
