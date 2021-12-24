@@ -13,15 +13,32 @@ namespace ManagerStudents.NewClassroom
         protected string position = "Student";
         protected const string PositionClassMonitor = "ClassMonitor";
         protected const string PositionVicoStudent = "VicoStudent";
+        int bonusHk = 0;
+        public Student()
+        {
+        }
+        public Student(string name)
+        {
+            this.name = name;
+        }
+        public Student(string name, double bonus, int bonusHk)
+        {
+            this.name = name;
+            this.bonus = bonus;
+            this.bonusHk = bonusHk;
+        }
+        public Student(string name,int position, double bonus, int bonusHk)
+        {
+            this.name = name;
+            SetPosition(position);
+            this.bonus = bonus;
+            this.bonusHk = bonusHk;
+        }
 
         public static void GetMenu()
         {
-            Console.WriteLine("Name\tPosition\tBound");
+            Console.WriteLine("Name\tPosition\tBound\tHK");
             Console.WriteLine("---------------------------");
-        }
-        public static void InputInformation()
-        {
-
         }
         public static void InforamationOfPosition()
         {
@@ -31,17 +48,16 @@ namespace ManagerStudents.NewClassroom
             Console.WriteLine("2: Class Monitor");
             Console.WriteLine("------------------------------------------");
         }
-        public Student()
-        {
-        }
 
-        public Student(string name,int position = 0)
+        public void SetBonusHk(int bonusHk)
         {
-            this.name = name;
-            SetPosition(position);
+            this.bonusHk = bonusHk;
         }
-        public void SetName(string name)
+        public int GetBonusHk()
         {
+            return bonusHk;
+        }
+        public void SetName(string name){
             this.name = name;
         }
 
@@ -87,7 +103,8 @@ namespace ManagerStudents.NewClassroom
         }
         public void GetInformation()
         {
-            Console.WriteLine(GetName() + '\t' + GetPosition() + '\t' + GetBonus());
+            Console.WriteLine(GetName() + '\t' + GetPosition() + '\t' + GetBonus()
+                + '\t' + GetBonusHk());
         }
         
     }

@@ -12,6 +12,7 @@ namespace ManagerStudents.NewClassroom
         {
             this.name = name;
             position = PositionClassMonitor;
+            SetBonusHk(2 + GetBonusHk());
         }
         public override double GetBonus()
         {
