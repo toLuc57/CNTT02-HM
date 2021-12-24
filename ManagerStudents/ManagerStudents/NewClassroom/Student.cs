@@ -11,11 +11,17 @@ namespace ManagerStudents.NewClassroom
         protected string name;
         protected double bonus = 0;
         protected string position = "Student";
+        protected const string PositionClassMonitor = "ClassMonitor";
+        protected const string PositionVicoStudent = "VicoStudent";
 
         public static void GetMenu()
         {
             Console.WriteLine("Name\tPosition\tBound");
             Console.WriteLine("---------------------------");
+        }
+        public static void InputInformation()
+        {
+
         }
         public static void InforamationOfPosition()
         {
@@ -61,12 +67,12 @@ namespace ManagerStudents.NewClassroom
                 case 1:
                     VicoStudent vicoStudent = new VicoStudent(name);
                     bonus = vicoStudent.GetBonus();
-                    this.position = "Vico Student";
+                    this.position = PositionClassMonitor;
                     break;
                 case 2:
                     ClassMonitor classMonitor = new ClassMonitor(name);
                     bonus = classMonitor.GetBonus();
-                    this.position = "Class Monitor";
+                    this.position = PositionVicoStudent;
                     break;
                 default:
                     Console.WriteLine("Input value in [0,2].");

@@ -11,12 +11,13 @@ namespace ManagerStudents.NewClassroom
         public VicoStudent(string name) : base(name)
         {
             this.name = name;
-            position = "Vico Student";
+            position = PositionVicoStudent;
         }
         public override double GetBonus()
         {
             bonus += 0.2;
             return bonus;
         }
+
     }
 }

@@ -13,22 +13,11 @@ namespace ManagerStudents
         {
             Console.WriteLine("--Manager Students--");
             List<Student> classroom1 = new List<Student>();
-          
-            Console.Write("Number of students: ");
-            int n = int.Parse(Console.ReadLine());
 
-            Student.InforamationOfPosition();
+            classroom1.Add(new ClassMonitor("abc"));
+            classroom1.Add(new VicoStudent("@qwwe"));
+            classroom1.Add(new Student("!23"));
 
-            for (int i=1; i <= n; ++i)
-            {
-                Console.WriteLine("Student index " + i + ": ");
-                Console.Write("Name: ");
-                string name = Console.ReadLine();
-                Console.Write("Position: ");
-                int position = int.Parse(Console.ReadLine());
-                classroom1.Add(new Student(name,position));
-                
-            }
             Console.WriteLine();
             Console.WriteLine("--Members in classroom--");
             Student.GetMenu();

@@ -11,12 +11,13 @@ namespace ManagerStudents.NewClassroom
         public ClassMonitor(string name):base(name)
         {
             this.name = name;
-            position = "Class Monitor";
+            position = PositionClassMonitor;
         }
         public override double GetBonus()
         {
             bonus += 0.5;
             return bonus;
         }
+
     }
 }
