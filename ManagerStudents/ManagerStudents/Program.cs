@@ -16,7 +16,7 @@ namespace ManagerStudents
 
             classroom1.Add(new ClassMonitor("abc"));
             classroom1.Add(new VicoStudent("@qwwe"));
-            classroom1.Add(new Student("!23"));
+            classroom1.Add(new VicoStudent("!23"));
 
             Console.WriteLine();
             Console.WriteLine("--Members in classroom--");

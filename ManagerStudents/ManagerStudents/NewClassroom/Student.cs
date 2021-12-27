@@ -11,7 +11,8 @@ namespace ManagerStudents.NewClassroom
         protected string name;
         protected double bonus = 0;
         protected int bonusConduct = 0;
-        protected const string Position = "Normal Student";
+        protected string position = "Normal Student";
+
         protected const string PositionClassMonitor = "Class Monitor";
         protected const string PositionVicoStudent = "Vico Student";
      
@@ -27,10 +28,6 @@ namespace ManagerStudents.NewClassroom
             Console.WriteLine("---------------------------");
         }
 
-        public void SetBonusConduct(int bonusConduct)
-        {
-            this.bonusConduct = bonusConduct;
-        }
         public virtual int GetBonusConduct()
         {
             return bonusConduct;
