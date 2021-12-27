@@ -11,9 +11,10 @@ namespace ManagerStudents.NewClassroom
         protected string name;
         protected double bonus = 0;
         protected int bonusConduct = 0;
-        protected string position = "Normal Student";
+        protected const string Position = "Normal Student";
         protected const string PositionClassMonitor = "Class Monitor";
         protected const string PositionVicoStudent = "Vico Student";
+     
 
         public Student(string name)
         {
