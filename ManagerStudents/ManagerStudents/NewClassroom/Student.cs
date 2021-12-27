@@ -10,65 +10,33 @@ namespace ManagerStudents.NewClassroom
     {
         protected string name;
         protected double bonus = 0;
-        protected string position = "Student";
-        protected const string PositionClassMonitor = "ClassMonitor";
-        protected const string PositionVicoStudent = "VicoStudent";
-        int bonusHk = 0;
-        public Student()
-        {
-        }
+        protected int bonusConduct = 0;
+        protected string position = "Normal Student";
+        protected const string PositionClassMonitor = "Class Monitor";
+        protected const string PositionVicoStudent = "Vico Student";
+
         public Student(string name)
         {
             this.name = name;
         }
-        public Student(string name, double bonus, int bonusHk)
-        {
-            this.name = name;
-            this.bonus = bonus;
-            this.bonusHk = bonusHk;
-        }
-        public Student(string name,int position, double bonus, int bonusHk)
-        {
-            this.name = name;
-            SetPosition(position);
-            this.bonus = bonus;
-            this.bonusHk = bonusHk;
-        }
 
         public static void GetMenu()
         {
-            Console.WriteLine("Name\tPosition\tBound\tHK");
+            Console.WriteLine("Name\tPosition\tBound\tConduct");
             Console.WriteLine("---------------------------");
         }
-        public static void InforamationOfPosition()
-        {
-            Console.WriteLine("---------------Position-------------------");
-            Console.WriteLine("0: Students");
-            Console.WriteLine("1: Vico Student");
-            Console.WriteLine("2: Class Monitor");
-            Console.WriteLine("------------------------------------------");
-        }
 
-        public void SetBonusHk(int bonusHk)
+        public void SetBonusConduct(int bonusConduct)
         {
-            this.bonusHk = bonusHk;
+            this.bonusConduct = bonusConduct;
         }
-        public int GetBonusHk()
+        public virtual int GetBonusConduct()
         {
-            return bonusHk;
+            return bonusConduct;
         }
-        public void SetName(string name){
-            this.name = name;
-        }
-
-        // Dặt tên kiểu PascalCase : GetName
         public string GetName()
         {
             return name;
-        }
-        public void SetBonus(double bonus)
-        {
-            this.bonus = bonus;
         }
         public virtual double GetBonus()
         {
@@ -104,7 +72,7 @@ namespace ManagerStudents.NewClassroom
         public void GetInformation()
         {
             Console.WriteLine(GetName() + '\t' + GetPosition() + '\t' + GetBonus()
-                + '\t' + GetBonusHk());
+                + '\t' + GetBonusConduct());
         }
         
     }
