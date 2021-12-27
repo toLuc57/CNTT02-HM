@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="NewClassroom\ClassMonitor.cs" />
     <Compile Include="NewClassroom\Student.cs" />
-    <Compile Include="NewClassroom\OtherStudent.cs" />
     <Compile Include="NewClassroom\VicoStudent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

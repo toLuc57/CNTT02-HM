@@ -6,62 +6,72 @@ using System.Threading.Tasks;
 
 namespace ManagerStudents.NewClassroom
 {
-    abstract class Student
+    class Student
     {
-        string name;
-        double point;
-        double bonus = 0;
-        // Dặt tên kiểu PascalCase : SetName 
-        public void SetName(string name)
+        protected string name;
+        protected double bonus = 0;
+        protected int bonusConduct = 0;
+        protected string position = "Normal Student";
+
+        protected const string PositionClassMonitor = "Class Monitor";
+        protected const string PositionVicoStudent = "Vico Student";
+     
+
+        public Student(string name)
         {
             this.name = name;
         }
 
-        // Dặt tên kiểu PascalCase : GetName
+        public static void GetMenu()
+        {
+            Console.WriteLine("Name\tPosition\tBound\tConduct");
+            Console.WriteLine("---------------------------");
+        }
+
+        public virtual int GetBonusConduct()
+        {
+            return bonusConduct;
+        }
         public string GetName()
         {
             return name;
         }
-        public void SetPoint(double point)
-        {
-            if(point >=0 && point <= 10)
-            {
-                this.point = point;
-            }
-            else
-            {
-                Console.WriteLine("Point in [0,10].");
-                Console.Write("Point: ");
-                SetPoint(double.Parse(Console.ReadLine()));
-            }
-        }
-        public double GetPoint()
-        {
-            return point;
-        }
-        // Dặt tên kiểu PascalCase : GetPosition
-        public void GetInformation()
-        {
-            Console.WriteLine(GetName() + '\t' + GetPoint() 
-                + '\t' + GetBound() + '\t' + GetTotal());
-        }
-
-        public void SetBound(double bonus)
-        {
-            this.bonus = bonus;
-        }
-        public virtual double GetBound()
+        public virtual double GetBonus()
         {
             return bonus;
         }
-        public double GetTotal()
+        public void SetPosition(int position)
         {
-            return point + bonus;
+            switch (position)
+            {
+                case 0:
+                    break;
+                case 1:
+                    VicoStudent vicoStudent = new VicoStudent(name);
+                    bonus = vicoStudent.GetBonus();
+                    this.position = PositionClassMonitor;
+                    break;
+                case 2:
+                    ClassMonitor classMonitor = new ClassMonitor(name);
+                    bonus = classMonitor.GetBonus();
+                    this.position = PositionVicoStudent;
+                    break;
+                default:
+                    Console.WriteLine("Input value in [0,2].");
+                    Console.Write("Position: ");
+                    SetPosition(int.Parse(Console.ReadLine()));
+                    break;
+            }
         }
-        public static void GetMenu()
+        public string GetPosition()
         {
-            Console.WriteLine("Name\tPoint\tBound\tTotal");
-            Console.WriteLine("------------------------------");
-        } 
+            return position;
+        }
+        public void GetInformation()
+        {
+            Console.WriteLine(GetName() + '\t' + GetPosition() + '\t' + GetBonus()
+                + '\t' + GetBonusConduct());
+        }
+        
     }
 }

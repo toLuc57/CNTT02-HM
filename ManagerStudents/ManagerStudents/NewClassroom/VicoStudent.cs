@@ -8,11 +8,21 @@ namespace ManagerStudents.NewClassroom
 {
     class VicoStudent : Student
     {
-        public VicoStudent(String name,double point)
+        public VicoStudent(string name) : base(name)
         {
-            SetName(name);
-            SetPoint(point);
-            SetBound(0.2);
+            this.name = name;
+            position = PositionVicoStudent;
         }
+        public override double GetBonus()
+        {
+            bonus += 0.2;
+            return base.GetBonus();
+        }
+        public override int GetBonusConduct()
+        {
+            bonusConduct += 1;
+            return base.GetBonusConduct();
+        }
+
     }
 }

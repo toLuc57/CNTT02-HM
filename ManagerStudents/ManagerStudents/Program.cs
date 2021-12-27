@@ -13,38 +13,11 @@ namespace ManagerStudents
         {
             Console.WriteLine("--Manager Students--");
             List<Student> classroom1 = new List<Student>();
-            Console.Write("Number of students: ");
-            int n = int.Parse(Console.ReadLine());
-            int i = 0;
-            if (n > 2)
-            {
-                Console.WriteLine("Class Monitor? ");
-                Console.Write("Name: ");
-                string name = Console.ReadLine();
-                Console.Write("Point: ");
-                double point = Convert.ToDouble(Console.ReadLine());
-                classroom1.Add(new ClassMonitor(name, point));
 
-                Console.WriteLine("Vico Class? ");
-                Console.Write("Name: ");
-                name = Console.ReadLine();
-                Console.Write("Point: ");
-                point = Convert.ToDouble(Console.ReadLine());
-                classroom1.Add(new VicoStudent(name, point));
+            classroom1.Add(new ClassMonitor("abc"));
+            classroom1.Add(new VicoStudent("@qwwe"));
+            classroom1.Add(new VicoStudent("!23"));
 
-                i += 2;
-            }
-
-            while(i<n)
-            {
-                Console.WriteLine("Student index " + ++i + ": ");
-                Console.Write("Name: ");
-                string name = Console.ReadLine();
-                Console.Write("Point: ");
-                double point = Convert.ToDouble(Console.ReadLine());
-                classroom1.Add(new OtherStudent(name,point));
-                
-            }
             Console.WriteLine();
             Console.WriteLine("--Members in classroom--");
             Student.GetMenu();
@@ -52,6 +25,7 @@ namespace ManagerStudents
             {
                 student.GetInformation();
             }
+            Console.WriteLine("------------------------------------------");
 
             Console.ReadLine();
         }
